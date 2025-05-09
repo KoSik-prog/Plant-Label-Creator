@@ -116,26 +116,36 @@ def create_pin(length, y_offset=0):
 
 
 def create_label_small(label):
-    if isinstance(label, list):
-        name = label[0].replace(" ", "_").replace(".", "_").replace(",", "_")
-    else:
-        name = label.replace(" ", "_").replace(".", "_").replace(",", "_")
+    try:
+        if isinstance(label, list):
+            name = label[0].replace(" ", "_").replace(".", "_").replace(",", "_")
+        else:
+            name = label.replace(" ", "_").replace(".", "_").replace(",", "_")
 
-    label_box = create_label_box(label, font_size=9, min_width=30, min_height=20)
-    pin = create_pin(70, -3)
-    label = label_box.union(pin)
-    label.val().exportStl(f"{name}_label.stl")
-    print(f"Label '{name}' saved as {name}_label.stl")
+        label_box = create_label_box(label, font_size=9, min_width=30, min_height=20)
+        pin = create_pin(70, -3)
+        label = label_box.union(pin)
+        label.val().exportStl(f"{name}_label.stl")
+        print(f"Label '{name}' saved as {name}_label.stl")
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
+    return True
 
 
 def create_label_big(label):
-    if isinstance(label, list):
-        name = label[0].replace(" ", "_").replace(".", "_").replace(",", "_")
-    else:
-        name = label.replace(" ", "_").replace(".", "_").replace(",", "_")
+    try:
+        if isinstance(label, list):
+            name = label[0].replace(" ", "_").replace(".", "_").replace(",", "_")
+        else:
+            name = label.replace(" ", "_").replace(".", "_").replace(",", "_")
 
-    label_box_big = create_label_box(label, font_size=16, min_width=80, min_height=40)
-    pin = create_pin(130, -13)
-    label = label_box_big.union(pin)
-    label.val().exportStl(f"{name}_label.stl")
-    print(f"Label '{name}' saved as {name}_label.stl")
+        label_box_big = create_label_box(label, font_size=16, min_width=80, min_height=40)
+        pin = create_pin(130, -13)
+        label = label_box_big.union(pin)
+        label.val().exportStl(f"{name}_label.stl")
+        print(f"Label '{name}' saved as {name}_label.stl")
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
+    return True

@@ -1,5 +1,10 @@
+/.vscode/
 /cad_test/
+/build/
+/dist/
 
 log.txt
+genexe.py
 *.stl
 *.pyc
+*.spec

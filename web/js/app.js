@@ -1,4 +1,4 @@
-function createLabel() {
+async function createLabel() {
     const line1 = document.getElementById('line_1').value.trim();
     const line2 = document.getElementById('line_2').value.trim();
     const labelSize = document.querySelector('input[name="labelSize"]:checked')?.value;
@@ -16,14 +16,21 @@ function createLabel() {
         linesToSend.push(line2);
     }
 
-    console.log('Lines to send:', linesToSend);
+    let result = false;
 
     if (labelSize === 'small') {
-        eel.generate_label_small(linesToSend);
+        result = await eel.generate_label_small(linesToSend)();
     } else if (labelSize === 'big') {
-        eel.generate_label_big(linesToSend);
+        result = await eel.generate_label_big(linesToSend)();
     } else {
         alert('Please select a label size.');
+        return;
+    }
+
+    if (result) {
+        alert('Label created successfully.');
+    } else {
+        alert('Label creation failed.');
     }
 }
 
