@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Label Creator</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Plant Label Creator</h1>
+        <div class="form-group">
+            <input type="text" id="line_1" placeholder="Enter first line">
+        </div>
+        <div class="form-group">
+            <input type="text" id="line_2" placeholder="Enter second line">
+        </div>
+        <div class="form-group">
+            <label>Label Size:</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="labelSize" value="small" checked>
+                    Small Label
+                </label>
+                <label>
+                    <input type="radio" name="labelSize" value="big">
+                    Big Label
+                </label>
+            </div>
+        </div>
+        <div class="button-group">
+            <button onclick="clearFields()">Clear</button>
+            <button onclick="createLabel()">Create</button>
+        </div>
+        <div class="footer">
+            <a href="http://github.com" target="_blank">Visit on GitHub</a>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
