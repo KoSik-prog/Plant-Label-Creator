@@ -13,6 +13,10 @@
 3. **Generate STL**: Click **Create**, and an STL file will be generated for you to download and print.
 4. **3D Print**: The labels are designed to be printed without support structures. For optimal durability, especially when exposed to strong sunlight, it is recommended to use PETG or ABS. ABS is particularly suitable for outdoor conditions due to its enhanced UV resistance.
 
+## Release
+[Plant-Label-Creator v1.0.0](https://github.com/KoSik-prog/Plant-Label-Creator/releases/tag/v1.0.0)
+
+
 
 ## License
 This project is licensed under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
